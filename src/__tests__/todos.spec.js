@@ -78,7 +78,7 @@ describe('Todos', () => {
         deadline: todoDate
       })
       .set('username', userResponse.body.username);
-
+console.log(todoResponse.body);
     const response = await request(app)
       .put(`/todos/${todoResponse.body.id}`)
       .send({
@@ -186,7 +186,7 @@ describe('Todos', () => {
     const listResponse = await request(app)
       .get('/todos')
       .set('username', userResponse.body.username);
-
+      console.log(listResponse.body)
     expect(listResponse.body).toEqual([]);
   });
 
